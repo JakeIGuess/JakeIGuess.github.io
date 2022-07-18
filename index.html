@@ -1,210 +1,28 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <style>
-        input {
-            border: rgb(134, 134, 134) solid 1px;
-            border-radius: 3px;
-        }
+<style>
+input:invalid {
+    border: red solid 1px;
+}
 
-        input,
-        textarea,
-        button,
-        select {
-            background-color: #1f1f1f;
-            border-collapse: separate;
-            color: white;
-        }
+input,textarea,button {
+    background-color: #1f1f1f;
+}
 
-        button {
-            color: white;
-            border: rgb(134, 134, 134) solid 1px;
-            border-radius: 3px;
-        }
+button {
+    color: white;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1f1f1f;
-            color: white;
-        }
-    </style>
+body {
+font-family: Arial, sans-serif;
+background-color: #1f1f1f;
+}
+
+</style>
 </head>
-
 <body>
-
-    You can now enter the settings for the lobby. The defaults have been selected for you.
-    <br>
-    <br>
-    If you're on a computer, you may want to navigate with the keyboard using the tab key.<br>
-    Tip: You can open a drop down menu or change a checkbox by pressing space and use the arrow keys to change numbers
-    or drop downs
-    <br><br>
-    You can also save the output for later and re-use it.
-    <br><br><br>
-    <section class="jsonify">
-        <form>
-            <label for="name">Lobby name to show in Discord</label><br>
-            <input type="text" name="name" id="name" maxlength="256" required><br>
-
-            <label for="code">Join code, a 6 character, letter-only join code for the lobby.</label><br>
-            <input type="text" id="code" name="code" maxlength="6" pattern="[A-z]{6}" required
-                title="Requires exactly 6 letters."><br>
-            <label for="region">Region. either North America (NA), Europe (EU), or Asia (AS)</label><br>
-            <select id="region" name="region" val>
-                <option value="NA">North America</option>
-                <option value="EU">Europe</option>
-                <option value="AS">Asia</option>
-            </select>
-            <br>
-
-            <label for="player_count">Player count, 4-15</label><br>
-            <input type="number" id="player_count" min="4" max="15" name="player_count" value="15" required><br>
-
-            <label for="chat_type">Chat type, either 'quick' or 'free'</label><br>
-            <select id="chat_type" name="chat_type">
-                <option value="quick">Quick</option>
-                <option value="free">Free</option>
-            </select>
-            <br>
-
-            <label for="map">The map used in the lobby</label><br>
-            <select id="map" name="map">
-                <option value="The Skeld">The Skeld</option>
-                <option value="MIRA HQ">MIRA HQ</option>
-                <option value="Polus">Polus</option>
-                <option value="The Airship">The Airship</option>
-            </select>
-            <br>
-
-
-            <label for="num_imposters">The number of imposters in the lobby, between 1 and 3</label><br>
-            <input type="number" id="num_imposters" min="1" max="3" name="num_imposters" value="1"><br>
-
-            <label for="confirm_ejects">Whether or not to confirm ejects</label><br>
-            <input type="hidden" id="conform_ejects" name="confirm_ejects" value="off">
-            <input type="checkbox" id="confirm_ejects" name="confirm_ejects" value="on"><br>
-
-            <label for="num_emergency_meetings">The number of emergency meetings in the lobby, between 0 and
-                9</label><br>
-            <input type="number" id="num_emergency_meetings" min="0" max="9" name="num_emergency_meetings"
-                value="1"><br>
-
-            <label for="emergency_cooldown_s">The cooldown, between 0 and 60</label><br>
-            <input type="number" id="emergency_cooldown_s" name="emergency_cooldown_s" min="0" max="60" step="5"
-                value="15"><br>
-
-            <label for="discussion_time_s">The discussion time, between 0 and 120</label><br>
-            <input type="number" id="discussion_time_s" name="discussion_time_s" min="0" max="120" step="15"
-                value="15"><br>
-
-            <label for="voting_time_s">The voting time, between 0 and 300</label><br>
-            <input type="number" id="voting_time_s" name="voting_time_s" min="0" max="300" step="15" value="120"><br>
-
-            <label for="anonymous_voting">Whether or not to allow anonymous voting</label><br>
-            <input type="hidden" id="anonymous_voting" name="anonymous_voting" value="off">
-            <input type="checkbox" id="anonymous_voting" name="anonymous_voting" value="on"><br>
-
-            <label for="player_speed">The player speed, between 0.5x and 3.0x</label><br>
-            <input type="number" id="player_speed" name="player_speed" min="0.5" max="3.0" step="0.25" value="1.0"><br>
-
-            <label for="crewmate_vision">Cremate vision, between 0.25x and 5.0x</label><br>
-            <input type="number" id="crewmate_vision" name="crewmate_vision" min="0.25" max="5.0" value="1.0"
-                step="0.25"><br>
-
-            <label for="imposter vision">Imposter vision, between 0.25x and 5.0x</label><br>
-            <input type="number" id="imposter vision" name="imposter vision" min="0.25" max="5.0" value="1.5"
-                step="0.25"><br>
-
-            <label for="kill_cooldown_s">The kill cooldown, between 10x and 60x</label><br>
-            <input type="number" id="kill_cooldown_s" name="kill_cooldown_s" min="10" max="60" step="2.5"
-                value="45"><br>
-
-            <label for="kill_distance">The kill distance, short, medium or long</label><br>
-            <select id="kill_distance" name="kill_distance">
-                <option value="short">Short</option>
-                <option value="medium">Medium</option>
-                <option value="long">Long</option>
-            </select>
-            <br>
-
-            <label for="taskbar_updates">When to show taskbar updates (always/meetings/never)</label><br>
-            <select id="taskbar_updates" name="taskbar_updates">
-                <option value="always">Always</option>
-                <option value="meetings">Meetings</option>
-                <option value="never">Never</option>
-            </select>
-            <br>
-
-            <label for="visual_tasks">Whether or not to show visual tasks</label><br>
-            <input type="hidden" id="visual_tasks" name="visual_tasks" value="off">
-            <input type="checkbox" id="visual_tasks" name="visual_tasks" value="on"><br>
-
-            <label for="common_tasks">The number of common tasks (0-2)</label><br>
-            <input type="number" id="common_tasks" name="common_tasks" min="0" max="2" value="1"><br>
-
-            <label for="long_tasks">The number of long tasks (0-3)</label><br>
-            <input type="number" id="long_tasks" name="long_tasks" min="0" max="3" value="1"><br>
-
-            <label for="short_tasks">The number of short tasks (0-5)</label><br>
-            <input type="number" id="short_tasks" name="short_tasks" min="0" max="5" value="2"><br>
-
-            <label for="num_scientists">The number of scientist, (0-15)</label><br>
-            <input type="number" id="num_scientists" name="num_scientists" min="0" max="15"><br>
-
-            <label for="pc_chance_scientist">The percentage chance of a scientist (0-100)</label><br>
-            <input type="number" id="pc_chance_scientist" name="pc_chance_scientist" min="0" max="100"><br>
-
-            <label for="num_engineers">The number of engineers, (0-15)</label><br>
-            <input type="number" id="num_engineers" name="num_engineers" min="0" max="15"><br>
-
-            <label for="pc_chance_engineer">The percentage chance of an engineer (0-100)</label><br>
-            <input type="number" id="pc_chance_engineer" name="pc_chance_engineer" min="0" max="100"><br>
-
-            <label for="num_angels">The number of guardian angels, (0-15)</label><br>
-            <input type="number" id="num_angels" name="num_angels" min="0" max="15"><br>
-
-            <label for="pc_chance_angel">The percentage chance of a guardian angel (0-100)</label><br>
-            <input type="number" id="pc_chance_angel" name="pc_chance_angel" min="0" max="100"><br>
-
-            <label for="num_shapeshifters">The number of shapeshifters, (0-15)</label><br>
-            <input type="number" id="num_shapeshifters" name="num_shapeshifters" min="0" max="15"><br>
-
-            <label for="pc_chance_shapeshifter">The percentage chance of a shapeshifter (0-100)</label><br>
-            <input type="number" id="pc_chance_shapeshifter" name="pc_chance_shapeshifter" min="0" max="100"><br>
-
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-
-    <div class="results">
-        <h2>JSON data</h2>
-        <textarea id="jsonify-data" rows=4 cols=50 placeholder="JSON data will appear once you click Submit above"
-            onclick="this.focus();this.select();document.execCommand('copy');alert('Copied! Now paste into your Discord DMs.');"
-            readonly></textarea>
-    </div>
-
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
 </body>
-
 </html>
-
-<script>
-    function handleSubmit(event) {
-        // adapted from learnwithjason.dev/blog/get-form-values-as-json
-
-        event.preventDefault();
-
-        const data = new FormData(event.target);
-
-        const formJSON = Object.fromEntries(data.entries());
-
-        const results = document.querySelector('.results textarea');
-        results.innerText = JSON.stringify(formJSON);
-        results.select();
-        document.execCommand('copy');
-        alert('Copied! Now paste into your Discord DMs.');
-    }
-
-    const form = document.querySelector('.jsonify');
-    form.addEventListener('submit', handleSubmit);
-</script>
