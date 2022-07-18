@@ -15,6 +15,7 @@
             background-color: #1f1f1f;
             border-collapse: separate;
             color: white;
+            margin-bottom: 10px;
         }
 
         button {
@@ -38,7 +39,7 @@
     <br>
     If you're on a computer, you may want to navigate with the keyboard using the tab key.<br>
     Tip: You can open a drop down menu or change a checkbox by pressing space and use the arrow keys to change numbers
-    or drop downs
+    or drop downs.
     <br><br>
     You can also save the output for later and re-use it.
     <br><br><br>
@@ -47,10 +48,10 @@
             <label for="name">Lobby name to show in Discord</label><br>
             <input type="text" name="name" id="name" maxlength="256" required><br>
 
-            <label for="code">Join code, a 6 character, letter-only join code for the lobby.</label><br>
+            <label for="code">Lobby join code</label><br>
             <input type="text" id="code" name="code" maxlength="6" pattern="[A-z]{6}" required
                 title="Requires exactly 6 letters."><br>
-            <label for="region">Region. either North America (NA), Europe (EU), or Asia (AS)</label><br>
+            <label for="region">Region</label><br>
             <select id="region" name="region" val>
                 <option value="NA">North America</option>
                 <option value="EU">Europe</option>
@@ -58,17 +59,17 @@
             </select>
             <br>
 
-            <label for="player_count">Player count, 4-15</label><br>
+            <label for="player_count">Player count</label><br>
             <input type="number" id="player_count" min="4" max="15" name="player_count" value="15" required><br>
 
-            <label for="chat_type">Chat type, either 'quick' or 'free'</label><br>
+            <label for="chat_type">Chat type</label><br>
             <select id="chat_type" name="chat_type">
                 <option value="quick">Quick</option>
                 <option value="free">Free</option>
             </select>
             <br>
 
-            <label for="map">The map used in the lobby</label><br>
+            <label for="map">Map</label><br>
             <select id="map" name="map">
                 <option value="The Skeld">The Skeld</option>
                 <option value="MIRA HQ">MIRA HQ</option>
@@ -78,49 +79,48 @@
             <br>
 
 
-            <label for="num_imposters">The number of imposters in the lobby, between 1 and 3</label><br>
+            <label for="num_imposters">Number of imposters</label><br>
             <input type="number" id="num_imposters" min="1" max="3" name="num_imposters" value="1"><br>
 
-            <label for="confirm_ejects">Whether or not to confirm ejects</label><br>
+            <label for="confirm_ejects">Confirm ejects</label><br>
             <input type="hidden" id="conform_ejects" name="confirm_ejects" value="off">
             <input type="checkbox" id="confirm_ejects" name="confirm_ejects" value="on"><br>
 
-            <label for="num_emergency_meetings">The number of emergency meetings in the lobby, between 0 and
-                9</label><br>
+            <label for="num_emergency_meetings">Number of emergency meetings</label><br>
             <input type="number" id="num_emergency_meetings" min="0" max="9" name="num_emergency_meetings"
                 value="1"><br>
 
-            <label for="emergency_cooldown_s">The cooldown, between 0 and 60</label><br>
+            <label for="emergency_cooldown_s">Emergency cooldown</label><br>
             <input type="number" id="emergency_cooldown_s" name="emergency_cooldown_s" min="0" max="60" step="5"
                 value="15"><br>
 
-            <label for="discussion_time_s">The discussion time, between 0 and 120</label><br>
+            <label for="discussion_time_s">Discussion time</label><br>
             <input type="number" id="discussion_time_s" name="discussion_time_s" min="0" max="120" step="15"
                 value="15"><br>
 
-            <label for="voting_time_s">The voting time, between 0 and 300</label><br>
+            <label for="voting_time_s">Voting time</label><br>
             <input type="number" id="voting_time_s" name="voting_time_s" min="0" max="300" step="15" value="120"><br>
 
-            <label for="anonymous_voting">Whether or not to allow anonymous voting</label><br>
+            <label for="anonymous_voting">Allow anonymous voting</label><br>
             <input type="hidden" id="anonymous_voting" name="anonymous_voting" value="off">
             <input type="checkbox" id="anonymous_voting" name="anonymous_voting" value="on"><br>
 
-            <label for="player_speed">The player speed, between 0.5x and 3.0x</label><br>
+            <label for="player_speed">Player speed</label><br>
             <input type="number" id="player_speed" name="player_speed" min="0.5" max="3.0" step="0.25" value="1.0"><br>
 
-            <label for="crewmate_vision">Cremate vision, between 0.25x and 5.0x</label><br>
+            <label for="crewmate_vision">Cremate vision</label><br>
             <input type="number" id="crewmate_vision" name="crewmate_vision" min="0.25" max="5.0" value="1.0"
                 step="0.25"><br>
 
-            <label for="imposter vision">Imposter vision, between 0.25x and 5.0x</label><br>
+            <label for="imposter vision">Imposter vision</label><br>
             <input type="number" id="imposter vision" name="imposter vision" min="0.25" max="5.0" value="1.5"
                 step="0.25"><br>
 
-            <label for="kill_cooldown_s">The kill cooldown, between 10x and 60x</label><br>
+            <label for="kill_cooldown_s">Kill cooldown</label><br>
             <input type="number" id="kill_cooldown_s" name="kill_cooldown_s" min="10" max="60" step="2.5"
                 value="45"><br>
 
-            <label for="kill_distance">The kill distance, short, medium or long</label><br>
+            <label for="kill_distance">Kill distance</label><br>
             <select id="kill_distance" name="kill_distance">
                 <option value="short">Short</option>
                 <option value="medium">Medium</option>
@@ -128,7 +128,7 @@
             </select>
             <br>
 
-            <label for="taskbar_updates">When to show taskbar updates (always/meetings/never)</label><br>
+            <label for="taskbar_updates">Task bar updates</label><br>
             <select id="taskbar_updates" name="taskbar_updates">
                 <option value="always">Always</option>
                 <option value="meetings">Meetings</option>
@@ -136,42 +136,43 @@
             </select>
             <br>
 
-            <label for="visual_tasks">Whether or not to show visual tasks</label><br>
+            <label for="visual_tasks">Visual tasks</label><br>
             <input type="hidden" id="visual_tasks" name="visual_tasks" value="off">
             <input type="checkbox" id="visual_tasks" name="visual_tasks" value="on"><br>
 
-            <label for="common_tasks">The number of common tasks (0-2)</label><br>
+            <label for="common_tasks">Number of common tasks</label><br>
             <input type="number" id="common_tasks" name="common_tasks" min="0" max="2" value="1"><br>
 
-            <label for="long_tasks">The number of long tasks (0-3)</label><br>
+            <label for="long_tasks">Number of long long tasks</label><br>
             <input type="number" id="long_tasks" name="long_tasks" min="0" max="3" value="1"><br>
 
-            <label for="short_tasks">The number of short tasks (0-5)</label><br>
+            <label for="short_tasks">Number of long short tasks</label><br>
             <input type="number" id="short_tasks" name="short_tasks" min="0" max="5" value="2"><br>
 
-            <label for="num_scientists">The number of scientist, (0-15)</label><br>
-            <input type="number" id="num_scientists" name="num_scientists" min="0" max="15"><br>
+            <label for="num_scientists">Number of long scientists</label><br>
+            <input type="number" id="num_scientists" name="num_scientists" min="0" max="15" value="0"><br>
 
-            <label for="pc_chance_scientist">The percentage chance of a scientist (0-100)</label><br>
-            <input type="number" id="pc_chance_scientist" name="pc_chance_scientist" min="0" max="100"><br>
+            <label for="pc_chance_scientist">Percentage chance of a scientist</label><br>
+            <input type="number" id="pc_chance_scientist" name="pc_chance_scientist" min="0" max="100" value="0"><br>
 
-            <label for="num_engineers">The number of engineers, (0-15)</label><br>
-            <input type="number" id="num_engineers" name="num_engineers" min="0" max="15"><br>
+            <label for="num_engineers">Number of long engineers</label><br>
+            <input type="number" id="num_engineers" name="num_engineers" min="0" max="15" value="0"><br>
 
-            <label for="pc_chance_engineer">The percentage chance of an engineer (0-100)</label><br>
-            <input type="number" id="pc_chance_engineer" name="pc_chance_engineer" min="0" max="100"><br>
+            <label for="pc_chance_engineer">Percentage chance of an engineer</label><br>
+            <input type="number" id="pc_chance_engineer" name="pc_chance_engineer" min="0" max="100" value="0"><br>
 
-            <label for="num_angels">The number of guardian angels, (0-15)</label><br>
-            <input type="number" id="num_angels" name="num_angels" min="0" max="15"><br>
+            <label for="num_angels">Number of long guardian angels</label><br>
+            <input type="number" id="num_angels" name="num_angels" min="0" max="15" value="0"><br>
 
-            <label for="pc_chance_angel">The percentage chance of a guardian angel (0-100)</label><br>
-            <input type="number" id="pc_chance_angel" name="pc_chance_angel" min="0" max="100"><br>
+            <label for="pc_chance_angel">Percentage chance of a guardian ange</label><br>
+            <input type="number" id="pc_chance_angel" name="pc_chance_angel" min="0" max="100" value="0"><br>
 
-            <label for="num_shapeshifters">The number of shapeshifters, (0-15)</label><br>
-            <input type="number" id="num_shapeshifters" name="num_shapeshifters" min="0" max="15"><br>
+            <label for="num_shapeshifters">Number of long shapeshifters</label><br>
+            <input type="number" id="num_shapeshifters" name="num_shapeshifters" min="0" max="15" value="0"><br>
 
-            <label for="pc_chance_shapeshifter">The percentage chance of a shapeshifter (0-100)</label><br>
-            <input type="number" id="pc_chance_shapeshifter" name="pc_chance_shapeshifter" min="0" max="100"><br>
+            <label for="pc_chance_shapeshifter">Percentage chance of a shapeshifter </label><br>
+            <input type="number" id="pc_chance_shapeshifter" name="pc_chance_shapeshifter" min="0" max="100"
+                value="0"><br>
 
             <button type="submit">Submit</button>
         </form>
