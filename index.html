@@ -3,7 +3,8 @@
 
 <head>
     <style>
-        input {
+        input,
+        select {
             border: rgb(134, 134, 134) solid 1px;
             border-radius: 3px;
         }
@@ -53,9 +54,9 @@
                 title="Requires exactly 6 letters."><br>
             <label for="region">Region</label><br>
             <select id="region" name="region" val>
-                <option value="NA">North America</option>
-                <option value="EU">Europe</option>
-                <option value="AS">Asia</option>
+                <option value="North America">North America</option>
+                <option value="Europe">Europe</option>
+                <option value="Asia">Asia</option>
             </select>
             <br>
 
@@ -64,8 +65,8 @@
 
             <label for="chat_type">Chat type</label><br>
             <select id="chat_type" name="chat_type">
-                <option value="quick">Quick</option>
-                <option value="free">Free</option>
+                <option value="Quick">Quick</option>
+                <option value="Free">Free</option>
             </select>
             <br>
 
@@ -84,7 +85,7 @@
 
             <label for="confirm_ejects">Confirm ejects</label><br>
             <input type="hidden" id="conform_ejects" name="confirm_ejects" value="off">
-            <input type="checkbox" id="confirm_ejects" name="confirm_ejects" value="on"><br>
+            <input type="checkbox" id="confirm_ejects" name="confirm_ejects" value="on" checked><br>
 
             <label for="num_emergency_meetings">Number of emergency meetings</label><br>
             <input type="number" id="num_emergency_meetings" min="0" max="9" name="num_emergency_meetings"
@@ -122,17 +123,17 @@
 
             <label for="kill_distance">Kill distance</label><br>
             <select id="kill_distance" name="kill_distance">
-                <option value="short">Short</option>
-                <option value="medium">Medium</option>
-                <option value="long">Long</option>
+                <option value="Short">Short</option>
+                <option value="Medium">Medium</option>
+                <option value="Long">Long</option>
             </select>
             <br>
 
             <label for="taskbar_updates">Task bar updates</label><br>
             <select id="taskbar_updates" name="taskbar_updates">
-                <option value="always">Always</option>
-                <option value="meetings">Meetings</option>
-                <option value="never">Never</option>
+                <option value="Always">Always</option>
+                <option value="Meetings">Meetings</option>
+                <option value="Never">Never</option>
             </select>
             <br>
 
