@@ -175,13 +175,17 @@
             <input type="number" id="pc_chance_shapeshifter" name="pc_chance_shapeshifter" min="0" max="100"
                 value="0"><br>
 
+            <label for="host_notes">Host notes to show in Discord</label><br>
+            <textarea id="host_notes" name="host_notes" rows="6" cols="75" maxlength="512"
+                placeholder="Leave blank for none"></textarea><br>
+
             <button type="submit">Submit</button>
         </form>
     </section>
 
     <div class="results">
         <h2>JSON data</h2>
-        <textarea id="jsonify-data" rows=4 cols=50 placeholder="JSON data will appear once you click Submit above"
+        <textarea id="jsonify-data" rows="6" cols="75" placeholder="JSON data will appear once you click Submit above"
             onclick="this.focus();this.select();document.execCommand('copy');alert('Copied! Now paste into your Discord DMs.');"
             readonly></textarea>
     </div>
